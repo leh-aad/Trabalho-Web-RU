@@ -1,0 +1,24 @@
+body {
+  margin: auto;;
+}
+
+.login-form {
+  margin: 20% auto 0 auto;
+  width: 80%;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+#form-ticket-utilizar {
+  margin-top: 150px;
+}
+
+.erro {
+  text-align: center;
+  margin: 10px auto;
+  color: red;
+}
+
+hr {
+  border-width: 2px;
+}
