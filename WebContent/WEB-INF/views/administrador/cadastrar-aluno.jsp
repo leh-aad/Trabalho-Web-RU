@@ -55,10 +55,10 @@
 				<button class="btn btn-success btn-block" type="submit">Cadastrar</button>
 			</form>
 
-			<c:if test="${ not empty feedback_cadastro }">
+			<c:if test="${ not empty feedback_aluno }">
 				<div class="erro">
 					<hr>
-					<span>${ feedback_cadastro }</span>
+					<span>${ feedback_aluno }</span>
 				</div>
 			</c:if>
 

@@ -5,9 +5,9 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css">
-	<link type="text/css" rel="stylesheet" href="resources/css/main.css">
-	<title>RU - Refeicao</title>
+	<link type="text/css" rel="stylesheet" href="../resources/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="../resources/css/main.css">
+	<title>Vender Ticket</title>
 </head>
 <body>
 

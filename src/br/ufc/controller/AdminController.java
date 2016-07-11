@@ -25,7 +25,7 @@ public class AdminController {
 
 	@Autowired
 	private SecretarioDAO secretarioDAO;
-	
+
 	@Autowired
 	private CardapioDAO cardapioDAO;
 
@@ -49,7 +49,7 @@ public class AdminController {
 		return "administrador/cadastrar-cardapio";
 	}
 
-	@RequestMapping("/aluno-cadastrar")
+	@RequestMapping("/cadastrar/aluno-cadastrar")
 	public String cadastrarAluno(Aluno aluno, Model model) {
 
 		if (aluno != null) {
@@ -61,18 +61,18 @@ public class AdminController {
 
 			if (usuarioDAO.inserir(usuario)) {
 				alunoDAO.inserir(aluno);
-				model.addAttribute("feedback-cadastro",
+				model.addAttribute("feedback-aluno",
 						"Aluno cadastrado com sucesso!");
-				return "cadastrar/aluno";
+				return "administrador/cadastrar-aluno";
 			}
 		}
 
-		model.addAttribute("feedback-cadastro",
+		model.addAttribute("feedback-aluno",
 				"Aluno nao pode ser cadastrado!");
-		return "cadastrar/aluno";
+		return "administrador/cadastrar-aluno";
 	}
 
-	@RequestMapping("/secretario-cadastrar")
+	@RequestMapping("/cadastrar/secretario-cadastrar")
 	public String cadastrarSecretario(Secretario secretario, Model model) {
 
 		if (secretario != null) {
@@ -84,26 +84,26 @@ public class AdminController {
 
 			if (usuarioDAO.inserir(usuario)) {
 				secretarioDAO.inserir(secretario);
-				model.addAttribute("feedback-cadastro",
+				model.addAttribute("feedback_secretario",
 						"Secretario cadastrado com sucesso!");
-				return "cadastrar/secretario";
+				return "administrador/cadastrar-secretario";
 			}
 		}
 
-		model.addAttribute("feedback-cadastro",
+		model.addAttribute("feedback_secretario",
 				"Secretario nao pode ser cadastrado!");
-		return "cadastrar/secretario";
+		return "administrador/cadastrar-secretario";
 	}
 
-	@RequestMapping("cardapio-cadastrar")
+	@RequestMapping("/cadastrar/cardapio-cadastrar")
 	public String cadastrarCardapio(Cardapio cardapio, Model model) {
-		
+
 		if (cardapio != null && cardapioDAO.inserir(cardapio))
-			model.addAttribute("feedback_cadastro", "Cardapio cadastrado com sucesso!");
+			model.addAttribute("feedback_cardapio", "Cardapio cadastrado com sucesso!");
 		else
-			model.addAttribute("feedback_cadastro", "Cardapio nao pode ser cadastrado!");
-		
-		return "cadastrar/cardapio";
+			model.addAttribute("feedback_cardapio", "Cardapio nao pode ser cadastrado!");
+
+		return "administrador/cadastrar-cardapio";
 	}
 
 }
