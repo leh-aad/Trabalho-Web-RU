@@ -39,6 +39,7 @@ public class HomeController {
 
 	@RequestMapping("/next-cardapio")
 	public String exibirProximoCardapio(Model model) {
+		
 		Calendar hoje = Calendar.getInstance();
 		int next_day_week = hoje.get(Calendar.DAY_OF_WEEK) + 1;
 		List<Cardapio> cardapios;

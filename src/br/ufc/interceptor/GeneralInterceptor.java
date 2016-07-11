@@ -18,10 +18,10 @@ public class GeneralInterceptor extends HandlerInterceptorAdapter {
 
 	private static final String[] urisPublicas = { "/", "index", "login",
 			"logout", "next-cardapio", "sobre", "about" };
-	private static final String[] urisAdministrador = { "administrador/index",
+	private static final String[] urisAdministrador = { "administrador", "administrador/index",
 			"cadastrar-aluno", "aluno-cadastrar", "cadastrar-secretario",
 			"secretario-cadastrar", "cadastrar-cardapio",
-			"cardapio-cadastrar" };
+			"cardapio-cadastrar", "cadastrar/aluno", "cadastrar/cardapio", "cadastrar/secretario" };
 	private static final String[] urisSecretario = { "secretario/index",
 			"vender-ticket", "ticket/vender" };
 	private static final String[] urisAluno = { "aluno/index" };

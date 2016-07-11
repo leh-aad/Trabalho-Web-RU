@@ -14,14 +14,14 @@ import br.ufc.model.Cardapio;
 
 @Controller
 @Transactional
-public class UsuarioController {
+public class CardapioController {
 
 	@Autowired
 	private CardapioDAO cardapioDAO;
 
 	@RequestMapping("aluno-next-cardapio")
 	public String nextCardapio(Model model) {
-		
+
 		Calendar hoje = Calendar.getInstance();
 		int next_day_week = hoje.get(Calendar.DAY_OF_WEEK) + 1;
 		List<Cardapio> cardapios;
@@ -35,8 +35,28 @@ public class UsuarioController {
 			model.addAttribute("almoco", c1);
 			model.addAttribute("jantar", c2);
 		}
-		
+
 		return "aluno/next-cardapio";
+	}
+	
+	@RequestMapping("secretario-next-cardapio")
+	public String secretarioNextCardapio(Model model) {
+
+		Calendar hoje = Calendar.getInstance();
+		int next_day_week = hoje.get(Calendar.DAY_OF_WEEK) + 1;
+		List<Cardapio> cardapios;
+		if (next_day_week > 7) cardapios = cardapioDAO.getCardapio(1);
+		else cardapios = cardapioDAO.getCardapio(next_day_week);
+
+		if (cardapios.size() >= 2) {
+			Cardapio c1 = cardapios.get(0);
+			Cardapio c2 = cardapios.get(1);
+
+			model.addAttribute("almoco", c1);
+			model.addAttribute("jantar", c2);
+		}
+
+		return "secretario/next-cardapio";
 	}
 
 }

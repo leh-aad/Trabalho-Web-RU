@@ -14,13 +14,13 @@
       <span class="navbar-brand">Tickets RU</span>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href="/Trabalho_Web_RU">Principal</a></li>
+      <li class="active"><a href="administrador/index">Principal</a></li>
       <li><a href="cadastrar/aluno">Cadastrar Aluno</a></li>
       <li><a href="cadastrar/secretario">Cadastrar Secretario</a></li>
       <li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
       <li><a href="logout">Sair</a></li>
     </ul>
   </div>
-	</div>
+
 </body>
 </html>

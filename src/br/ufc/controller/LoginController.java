@@ -33,7 +33,7 @@ public class LoginController {
 	@Autowired
 	private SecretarioDAO secretarioDAO;
 	@Autowired
-	private CardapioDAO cardapioDAO;	
+	private CardapioDAO cardapioDAO;
 	
 	@RequestMapping("/login")
 	public String login(Usuario usuario, HttpSession session, Model model) {
