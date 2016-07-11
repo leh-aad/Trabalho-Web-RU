@@ -4,8 +4,8 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-  <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css"/>
-  <link type="text/css" rel="stylesheet" href="resources/css/main.css"/>
+  <link type="text/css" rel="stylesheet" href="../resources/css/bootstrap.css"/>
+  <link type="text/css" rel="stylesheet" href="../resources/css/main.css"/>
 
   <title>Tickets RU - UFC</title>
 </head>

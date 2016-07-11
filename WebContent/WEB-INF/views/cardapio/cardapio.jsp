@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<div class="tabela">
+<div>
 
   <h2 class="text-success">Almoco</h2>
 

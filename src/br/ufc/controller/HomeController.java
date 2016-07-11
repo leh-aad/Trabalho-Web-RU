@@ -26,7 +26,7 @@ public class HomeController {
 		int day_week = hoje.get(Calendar.DAY_OF_WEEK);
 		List<Cardapio> cardapios = cardapioDAO.getCardapio(day_week);
 
-		if (cardapios.size() >= 2) {
+		if (cardapios.size() > 0) {
 			Cardapio c1 = cardapios.get(0);
 			Cardapio c2 = cardapios.get(1);
 
@@ -39,7 +39,7 @@ public class HomeController {
 
 	@RequestMapping("/next-cardapio")
 	public String exibirProximoCardapio(Model model) {
-		
+
 		Calendar hoje = Calendar.getInstance();
 		int next_day_week = hoje.get(Calendar.DAY_OF_WEEK) + 1;
 		List<Cardapio> cardapios;

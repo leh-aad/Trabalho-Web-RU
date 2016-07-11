@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<div class="col-md-4">
+<div class="col-md-4 login">
+
   <div class="form">
     <form id="form-login" action="login" method="post">
       <div class="form-group">

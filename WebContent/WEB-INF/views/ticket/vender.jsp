@@ -14,7 +14,7 @@ pageEncoding="ISO-8859-1"%>
 	<div class="container">
 
 		<div class="col-md-8">
-			<form class="col-md-10" action="vender-ticket" method="post">
+			<form class="col-md-10" action="../vender-ticket" method="post">
 
 				<div class="form-group">
 				  <label for="login">Matricula:</label>
@@ -33,7 +33,7 @@ pageEncoding="ISO-8859-1"%>
 					</select>
 				</div>
 
-				<button type="submit">Vender</button>
+				<button class="btn btn-success btn-block" type="submit">Vender</button>
 
 			</form>
 		</div>

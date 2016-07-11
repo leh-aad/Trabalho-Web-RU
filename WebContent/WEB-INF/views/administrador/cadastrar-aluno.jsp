@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,22 +26,25 @@
 	<div class="container">
 
 		<div class="form col-md-4 col-md-offset-4">
-			<form id="form-aluno" action="cadastrar/aluno" method="post">
+			<form id="form-cadastro-usuario" action="cadastrar/aluno" method="post">
 				<div class="form-group">
 					<label for="matricula">Matricula:</label>
 					<input id="matricula" class="form-control" type="text" name="matricula">
 					<span class="erro" id="erro-matricula"></span>
 				</div>
+
 				<div class="form-group">
 					<label for="nome">Nome:</label>
 					<input id="nome" class="form-control" type="text" name="nome">
 					<span class="erro" id="erro-nome"></span>
 				</div>
+
 				<div class="form-group">
 					<label for="email">E-mail:</label>
 					<input id="email" class="form-control" type="text" name="email">
 					<span class="erro" id="erro-email"></span>
 				</div>
+
 				<div class="form-group">
 					<label for="curso">Curso:</label>
 					<select id="curso" class="form-control" name="curso">
