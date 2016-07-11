@@ -18,13 +18,14 @@
       <li class="active"><a href="#">Cadastrar Aluno</a></li>
       <li><a href="cadastrar/secretario">Cadastrar Secretario</a></li>
       <li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
+			<li><a href="logout">Sair</a></li>
     </ul>
   </div>
 
 	<div class="container">
 
 		<div class="form col-md-4 col-md-offset-4">
-			<form id="form-aluno-cadastro" action="cadastrar/aluno" method="post">
+			<form id="form-aluno" action="cadastrar/aluno" method="post">
 				<div class="form-group">
 					<label for="matricula">Matricula:</label>
 					<input id="matricula" class="form-control" type="text" name="matricula">

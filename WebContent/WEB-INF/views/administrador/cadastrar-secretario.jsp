@@ -4,9 +4,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Novo Aluno</title>
-	<link rel="stylesheet" type="text/css" href="resource/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="resource/css/main.css">
-	<script type="text/javascript" src="resource/js/cadastro.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+	<script type="text/javascript" src="resources/js/cadastro.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default">
@@ -15,10 +15,11 @@
 			<li><a href="cadastrar/aluno">Cadastar Aluno</a></li>
 			<li class="active"><a href="#">Cadastar Secretario</a></li>
 			<li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
+			<li><a href="logout">Sair</a></li>
 		</ul>
 	</div>
-	<div class="form col-md-4 col-md-offset-4">
-		<form id="form-secretario-cadastro" action="secretario-cadastrar" method="post">
+	<div class="col-md-4 col-md-offset-4">
+		<form id="form-secretario" action="secretario-cadastrar" method="post">
 			<div class="form-group">
 				<label for="codigo">Matricula:</label>
 				<input id="codigo" class="form-control" type="text" name="codigo">

@@ -26,7 +26,7 @@ public class AdminController {
 	private SecretarioDAO secretarioDAO;
 
 	@RequestMapping("/administrador")
-	private String index(){
+	public String index(){
 		return "administrador/index";
 	}
 

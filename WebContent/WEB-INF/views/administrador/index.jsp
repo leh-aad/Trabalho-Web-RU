@@ -18,6 +18,7 @@
       <li><a href="cadastrar/aluno">Cadastrar Aluno</a></li>
       <li><a href="cadastrar/secretario">Cadastrar Secretario</a></li>
       <li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
+      <li><a href="logout">Sair</a></li>
     </ul>
   </div>
 	</div>

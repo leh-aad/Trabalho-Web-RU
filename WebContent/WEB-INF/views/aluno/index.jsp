@@ -16,8 +16,9 @@
     </div>
     <ul class="nav navbar-nav navbar-left">
       <li class="active"><a href="#">Principal</a></li>
-      <li><a href="next-cardapio">Cardapio do Proximo Dia</a></li>
+      <li><a href="aluno-next-cardapio">Cardapio do Proximo Dia</a></li>
       <li><a href="about">Sobre</a></li>
+      <li><a href="logout">Sair</a></li>
     </ul>
   </div>
 
