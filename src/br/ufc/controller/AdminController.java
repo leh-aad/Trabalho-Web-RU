@@ -1,7 +1,17 @@
 package br.ufc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.ufc.dao.AlunoDAO;
+import br.ufc.dao.SecretarioDAO;
+import br.ufc.dao.UsuarioDAO;
+import br.ufc.model.Aluno;
+import br.ufc.model.Cardapio;
+import br.ufc.model.Secretario;
+import br.ufc.model.Usuario;
 
 @Controller
 public class AdminController {
@@ -28,6 +38,11 @@ public class AdminController {
 	@RequestMapping("/cadastrar/secretario")
 	public String cadastrarSecretario() {
 		return "administrador/cadastrar-secretario";
+	}
+	
+	@RequestMapping("/cadastrar/cardapio")
+	public String cadastrarCardapio() {
+		return "administrador/cadastrar-cardapio";
 	}
 
 	@RequestMapping("/aluno-cadastrar")
@@ -72,4 +87,11 @@ public class AdminController {
 		return "cadastrar/secretario";
 	}
 
+	@RequestMapping("cardapio-cadastrar")
+	public String cadastrarCardapio(Cardapio cardapio) {
+		
+		
+		return "cadastrar/cardapio";
+	}
+	
 }

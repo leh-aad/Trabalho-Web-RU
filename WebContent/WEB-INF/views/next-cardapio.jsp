@@ -27,32 +27,7 @@
       <jsp:include page="cardapio/cardapio.jsp"/>
     </div>
 
-    <div class="col-md-4">
-      <div class="login-form">
-        <form id="form-login" action="tentativaLogin" method="post">
-          <div class="form-group">
-            <label for="login">Usuario:</label>
-            <input class="form-control" id="login" type="text" name="login"/>
-          </div>
-          <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input class="form-control" id="senha" type="password" name="senha"/>
-          </div>
-          <div class="form-group">
-            <label for="tipo-usuario">Tipo de Usuario:</label>
-            <select id="tipo-usuario" class="form-control" name="tipo_usuario">
-              <option value="aluno">aluno</option>
-              <option value="secretario">secretario</option>
-            </select>
-          </div>
-          <button class="btn btn-success btn-block" type="submit">Login</button>
-        </form>
-      </div>
-      <div class="erro">
-        <hr>
-        <span id="erro-login"></span>
-      </div>
-    </div>
+    <jsp:include page="login.jsp"></jsp:include>
 
   </div>
 </body>

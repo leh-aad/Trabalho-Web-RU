@@ -38,11 +38,14 @@ public class LoginController {
 
 				switch (usr.getTipoUsuario()) {
 				case "aluno":
-					Aluno aluno = alunoDAO.getAlunoPorLogin(usr.getLogin());
+					Aluno aluno = alunoDAO.buscarAluno(usr.getLogin());
 					model.addAttribute("aluno", aluno);
 					return "aluno/index";
 				case "secretario":
-					Secretario secretario = secretarioDAO.getSecretarioPorLogin(usr.getLogin());
+					Secretario secretario = secretarioDAO.buscarSecretario(usr.getLogin());
+					if (secretario.isAdministrador())
+						return "administrador/index";
+						
 					model.addAttribute("secretario", secretario);
 					return "secretario/index";
 				case "ru":

@@ -1,16 +1,31 @@
 package br.ufc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.ufc.dao.AlunoDAO;
+import br.ufc.dao.SecretarioDAO;
+import br.ufc.dao.UsuarioDAO;
+import br.ufc.model.Aluno;
+import br.ufc.model.Secretario;
 import br.ufc.model.Usuario;
 
 @Transactional
 @Controller
 public class TicketController {
 
+	@Autowired
+	private UsuarioDAO usuarioDAO;
+	
+	@Autowired
+	private AlunoDAO alunoDAO;
+	
+	@Autowired
+	private SecretarioDAO secretarioDAO;
+	
 	@RequestMapping("/ticket/vender")
 	public String telaVender() {
 		return "ticket/vender";
@@ -27,7 +42,7 @@ public class TicketController {
 		boolean erro = false;
 
 		if (quantidade > 5 || quantidade < 0) {
-			model.addAttribute("feedback_venda", "A quantidade tem que está entre 1 e 5 tickets!")
+			model.addAttribute("feedback_venda", "A quantidade tem que estar entre 1 e 5 tickets!");
 			return "ticket/vender";
 		}
 
@@ -36,7 +51,7 @@ public class TicketController {
 		if (usuario != null) {
 			switch (usuario.getTipoUsuario()) {
 			case "aluno":
-				Aluno aluno = alunoDAO.buscarAluno(usuario.getLogin);
+				Aluno aluno = alunoDAO.buscarAluno(usuario.getLogin());
 				if (aluno != null) {
 					aluno.setCredito(aluno.getCredito() + quantidade);
 					alunoDAO.alterar(aluno);
@@ -46,7 +61,7 @@ public class TicketController {
 				break;
 
 			case "secretario":
-				Secretario secretario = secretarioDAO.buscarSecretario(usuario.getLogin);
+				Secretario secretario = secretarioDAO.buscarSecretario(usuario.getLogin());
 				if (secretario != null) {
 					secretario.setCredito(secretario.getCredito() + quantidade);
 					secretarioDAO.alterar(secretario);
@@ -75,10 +90,10 @@ public class TicketController {
 		if (usuario != null) {
 			switch (usuario.getTipoUsuario()) {
 			case "aluno":
-				Aluno aluno = alunoDAO.buscarAluno(usuario.getLogin);
+				Aluno aluno = alunoDAO.buscarAluno(usuario.getLogin());
 				if (aluno != null) {
 					if (aluno.getCredito() == 0) {
-						model.addAttribute("feedback_login", "Usuario com credito insuficiente!")
+						model.addAttribute("feedback_login", "Usuario com credito insuficiente!");
 						return "ticket/utilizar";
 					} else {
 						aluno.setCredito(aluno.getCredito() - 1);
@@ -89,10 +104,10 @@ public class TicketController {
 				break;
 
 			case "secretario":
-				Secretario secretario = secretarioDAO.buscarSecretario(usuario.getLogin);
+				Secretario secretario = secretarioDAO.buscarSecretario(usuario.getLogin());
 				if (secretario != null) {
 					if (secretario.getCredito() == 0) {
-						model.addAttribute("feedback_login", "Usuario com credito insuficiente!")
+						model.addAttribute("feedback_login", "Usuario com credito insuficiente!");
 						return "ticket/utilizar";
 					} else {
 						secretario.setCredito(secretario.getCredito() - 1);

@@ -10,7 +10,7 @@
 <title>RU - Refeicao</title>
 </head>
 <body>
-	<div class="form col-md-4 col-md-offset-4">
+	<div class="col-md-4 col-md-offset-4">
 		<form id="form-ticket-utilizar" action="utilizar-ticket" method="post">
 			<div class="form-group">
 				<label for="login">Login:</label> <input id="login"
@@ -23,13 +23,13 @@
 			<input class="btn btn-success btn-block" type="submit" value="Ok">
 		</form>
 
-    <c:if test="${ not empty erro_login }">
+    <c:if test="${ not empty feedback_login }">
   		<div class="erro">
   			<hr>
-  			<span id="erro-login">${ erro_login }</span>
+  			<span>${ feedback_login }</span>
   		</div>
   	</c:if>
-    
+
 	</div>
 </body>
 </html>

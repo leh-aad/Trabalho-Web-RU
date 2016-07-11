@@ -2,9 +2,8 @@ body {
   margin: auto;;
 }
 
-.login-form {
+.form {
   margin: 20% auto 0 auto;
-  width: 80%;
   min-width: 200px;
   max-width: 500px;
 }
@@ -14,7 +13,6 @@ body {
 }
 
 .erro {
-  width: 80%;
   text-align: center;
   margin: 10px auto;
   color: red;

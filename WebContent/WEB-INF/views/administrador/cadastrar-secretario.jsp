@@ -11,7 +11,7 @@
 <body>
 	<div class="navbar navbar-default">
 		<ul class="nav navbar-nav">
-			<li><a href="/Trabalho_Web_RU">Home</a></li>
+			<li><a href="/Trabalho_Web_-_RU">Home</a></li>
 			<li><a href="cadastrar/aluno">Cadastar Aluno</a></li>
 			<li class="active"><a href="#">Cadastar Secretario</a></li>
 			<li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
