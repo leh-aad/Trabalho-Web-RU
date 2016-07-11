@@ -30,7 +30,7 @@
 
     <div class="col-md-4">
       <div class="login-form">
-        <form id="form-login" action="tentativa-login" method="post">
+        <form id="form-login" action="login" method="post">
           <div class="form-group">
             <label for="login">Usuario:</label>
             <input class="form-control" id="login" type="text" name="login"/>
@@ -44,10 +44,10 @@
         </form>
       </div>
 
-			<c:if test="${ not empty erro_login }">
+			<c:if test="${ not empty feedback_login }">
 				<div class="erro">
 					<hr>
-					<span id="erro-login">${ erro_login }</span>
+					<span>${ feedback_login }</span>
 				</div>
 			</c:if>
 		</div>

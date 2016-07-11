@@ -52,7 +52,7 @@ public class SecretarioDAO {
 		return secretarios;
 	}
 
-	public Secretario getSecretarioPorLogin(String matricula) {
+	public Secretario buscarSecretario(String matricula) {
 		String hql = "select s from secretario as s where matricula = :param_matricula";
 
 		Query query = manager.createQuery(hql);

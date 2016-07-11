@@ -16,7 +16,7 @@ public class Cardapio {
 	@Column(name = "tipo")
 	private int tipo;
 
-	//data eh o dia da semana domingo = 1 ... 7
+	//data eh o dia da semana, domingo = 1 ... 7
 	@Column(name = "data")
 	private int data;
 

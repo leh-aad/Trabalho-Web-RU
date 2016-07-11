@@ -18,24 +18,24 @@ import br.ufc.model.Usuario;
 @Controller
 @Transactional
 public class LoginController {
-	
+
 	@Autowired
 	private UsuarioDAO usuarioDAO;
-	
+
 	@Autowired
 	private AlunoDAO alunoDAO;
-	
+
 	@Autowired
 	private SecretarioDAO secretarioDAO;
 
-	@RequestMapping("/tentativa-login")
+	@RequestMapping("/login")
 	public String tentativaLogin(Usuario usuario, HttpSession session, Model model) {
 		if (usuario != null) {
 			Usuario usr = usuarioDAO.autenticar(usuario.getLogin(), usuario.getSenha());
 
 			if (usr != null) {
 				session.setAttribute("usuario", usr);
-				
+
 				switch (usr.getTipoUsuario()) {
 				case "aluno":
 					Aluno aluno = alunoDAO.getAlunoPorLogin(usr.getLogin());
@@ -50,7 +50,14 @@ public class LoginController {
 				}
 			}
 		}
-		model.addAttribute("erro_login", "Usuario e/ou senha invalidos!");
+		model.addAttribute("feedback_login", "Usuario e/ou senha invalidos!");
+		return "index";
+	}
+
+	@RequestMapping("/logout")
+	public String logout(HttpSession session){
+
+		session.invalidate();
 		return "index";
 	}
 }
