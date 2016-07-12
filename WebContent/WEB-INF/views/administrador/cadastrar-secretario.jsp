@@ -6,9 +6,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Novo Aluno</title>
-	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
-	<script type="text/javascript" src="../resources/js/cadastro.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+	<script type="text/javascript" src="resources/js/cadastro.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
@@ -16,16 +16,16 @@
 			<span class="navbar-brand">Tickets RU</span>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="../administrador">Principal</a></li>
-			<li><a href="../cadastrar/aluno">Cadastar Aluno</a></li>
+			<li><a href="administrador">Principal</a></li>
+			<li><a href="cadastrar-aluno-form">Cadastar Aluno</a></li>
 			<li class="active"><a href="#">Cadastar Secretario</a></li>
-			<li><a href="../cadastrar/cardapio">Cadastrar Cardapio</a></li>
-			<li><a href="../logout">Sair</a></li>
+			<li><a href="cadastrar-cardapio-form">Cadastrar Cardapio</a></li>
+			<li><a href="logout">Sair</a></li>
 		</ul>
 	</div>
 
 	<div class="col-md-4 col-md-offset-4">
-		<form id="form-cadastro-usuario" action="secretario-cadastrar" method="post">
+		<form id="form-cadastro-usuario" action="cadastrar-secretario" method="post">
 			<div class="form-group">
 				<label for="matricula">Matricula:</label>
 				<input id="matricula" class="form-control" type="text" name="matricula">

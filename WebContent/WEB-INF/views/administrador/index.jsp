@@ -15,9 +15,9 @@
     </div>
     <ul class="nav navbar-nav navbar-left">
       <li class="active"><a href="administrador/index">Principal</a></li>
-      <li><a href="cadastrar/aluno">Cadastrar Aluno</a></li>
-      <li><a href="cadastrar/secretario">Cadastrar Secretario</a></li>
-      <li><a href="cadastrar/cardapio">Cadastrar Cardapio</a></li>
+      <li><a href="cadastrar-aluno-form">Cadastrar Aluno</a></li>
+      <li><a href="cadastrar-secretario-form">Cadastrar Secretario</a></li>
+      <li><a href="cadastrar-cardapio-form">Cadastrar Cardapio</a></li>
       <li><a href="logout">Sair</a></li>
     </ul>
   </div>

@@ -5,9 +5,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Novo Aluno</title>
-	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
-	<script type="text/javascript" src="../resources/js/cardapio.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+	<script type="text/javascript" src="resources/js/cardapio.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
@@ -15,11 +15,11 @@
 			<span class="navbar-brand">Tickets RU</span>
 		</div>
 		<ul class="nav navbar-nav navbar-left">
-			<li><a href="../administrador">Principal</a></li>
-			<li><a href="../cadastrar/aluno">Cadastrar Aluno</a></li>
-			<li><a href="../cadastrar/secretario">Cadastrar Secretario</a></li>
+			<li><a href="administrador">Principal</a></li>
+			<li><a href="cadastrar-aluno-form">Cadastrar Aluno</a></li>
+			<li><a href="cadastrar-secretario-form">Cadastrar Secretario</a></li>
 			<li class="active"><a href="#">Cadastrar Cardapio</a></li>
-			<li><a href="../logout">Sair</a></li>
+			<li><a href="logout">Sair</a></li>
 		</ul>
 	</div>
 
@@ -27,7 +27,7 @@
 
 		<div class="col-md-8 col-md-offset-2">
 
-			<form id="form-cardapio" class="form-horizontal" action="cardapio-cadastrar" method="post">
+			<form id="form-cardapio" class="form-horizontal" action="cadastrar-cardapio" method="post">
 
 				<div class="form-group">
 					<label class="control-label col-sm-3" for="data">Dia da Semana:</label>
