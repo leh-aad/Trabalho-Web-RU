@@ -16,11 +16,12 @@ public class CardapioDAO {
 	@PersistenceContext
 	private EntityManager manager;
 
-	public boolean inserir(Cardapio cardapio) {
+	public boolean inserir(Cardapio cardapio) {	
 		if (cardapio != null) {
 			manager.persist(cardapio);
 			return true;
 		}
+		
 		return false;
 	}
 
@@ -39,10 +40,12 @@ public class CardapioDAO {
 
 	public boolean remover(Long id) {
 		Cardapio cardapio = recuperar(id);
+		
 		if (cardapio != null) {
 			manager.remove(cardapio);
 			return true;
 		}
+		
 		return false;
 	}
 
@@ -55,6 +58,7 @@ public class CardapioDAO {
 		
 		@SuppressWarnings("unchecked")
 		List<Cardapio> cardapios = query.getResultList();
+		
 		return cardapios;
 	}
 

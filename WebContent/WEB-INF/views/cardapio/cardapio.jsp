@@ -31,10 +31,10 @@
     </c:if>
   </table>
   <c:if test="${ empty almoco }">
-    <h3 class="text-danger col-md-offset-2">Cardapio nao cadastrado para hoje!</h3>
+    <h3 class="text-danger col-md-offset-2">Cardapio nao cadastrado!</h3>
   </c:if>
 
-  <h2 class="text-success">Janta</h2>
+  <h2 class="text-success">Jantar</h2>
 
   <table class="table table-striped">
     <thead>
@@ -62,8 +62,8 @@
       </tr>
     </tbody>
   </table>
+  
   <c:if test="${ empty jantar }">
-    <h3 class="text-danger col-md-offset-2">Cardapio nao cadastrado para hoje!</h3>
+    <h3 class="text-danger col-md-offset-2">Cardapio nao cadastrado!</h3>
   </c:if>
-
 </div>

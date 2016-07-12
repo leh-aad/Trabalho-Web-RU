@@ -18,7 +18,7 @@ pageEncoding="ISO-8859-1"%>
     </div>
     <ul class="nav navbar-nav navbar-left">
       <li><a href="secretario">Principal</a></li>
-      <li><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
+      <li><a href="next-cardapio">Cardapio do Proximo Dia</a></li>
       <li class="active"><a href="vender-ticket-form">Vender Ticket</a></li>
       <li><a href="logout">Sair</a></li>
     </ul>

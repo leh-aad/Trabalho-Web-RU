@@ -24,7 +24,6 @@
   </div>
 
 	<div class="container">
-
 	  <div class="col-md-8 col-md-offset-2">
 			<jsp:include page="../aluno/lista.jsp"/>
 		</div>
@@ -32,7 +31,6 @@
 		<div class="col-md-8 col-md-offset-2">
 			<jsp:include page="../secretario/lista.jsp"/>
 		</div>
-
 	</div>
 
 	<jsp:include page="../rodape.jsp"/>

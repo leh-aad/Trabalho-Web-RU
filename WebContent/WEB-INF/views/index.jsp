@@ -25,11 +25,10 @@
   <div class="container">
 
     <div class="col-md-8">
-      <jsp:include page="cardapio/cardapio.jsp"/>
+      <c:import url="cardapio/cardapio.jsp"/>
     </div>
 
     <jsp:include page="login.jsp"/>
-
   </div>
   
   <jsp:include page="rodape.jsp"/>

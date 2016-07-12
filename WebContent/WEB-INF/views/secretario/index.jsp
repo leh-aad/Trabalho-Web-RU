@@ -16,7 +16,7 @@
     </div>
     <ul class="nav navbar-nav navbar-left">
       <li class="active"><a href="secretario">Principal</a></li>
-      <li><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
+      <li><a href="next-cardapio">Cardapio do Proximo Dia</a></li>
       <li><a href="vender-ticket-form">Vender Ticket</a></li>
       <li><a href="logout">Sair</a></li>
     </ul>
@@ -29,10 +29,10 @@
     </div>
 
     <div class="perfil col-md-3 col-md-offset-9">
-      <h4 class="text-danger">Seus Dados</h4>
-      <h5 class="text-success">Matricula: ${ secretario.matricula }</h5>
-      <h5 class="text-success">Nome: ${ secretario.nome }</h5>
-      <h5 class="text-success">Creditos: ${ secretario.credito }</h5>
+	     <h4 class="text-danger">Seus Dados</h4>
+	     <h5 class="text-success">Matricula: ${ secretario.matricula }</h5>
+	     <h5 class="text-success">Nome: ${ secretario.nome }</h5>
+	     <h5 class="text-success">Creditos: ${ secretario.credito }</h5>
     </div>
 
   </div>

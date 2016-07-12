@@ -1,8 +1,5 @@
 package br.ufc.controller;
 
-import java.util.Calendar;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.AlunoDAO;
-import br.ufc.dao.CardapioDAO;
 import br.ufc.dao.SecretarioDAO;
 import br.ufc.dao.UsuarioDAO;
 import br.ufc.model.Aluno;
-import br.ufc.model.Cardapio;
 import br.ufc.model.Secretario;
 import br.ufc.model.Usuario;
 
@@ -31,8 +26,6 @@ public class LoginController {
 
 	@Autowired
 	private SecretarioDAO secretarioDAO;
-	@Autowired
-	private CardapioDAO cardapioDAO;
 	
 	@RequestMapping("/login")
 	public String login(Usuario usuario, HttpSession session) {
@@ -40,19 +33,7 @@ public class LoginController {
 			Usuario usr = usuarioDAO.autenticar(usuario.getLogin(), usuario.getSenha());
 
 			if (usr != null) {
-				session.setAttribute("usuario", usr);
-				
-				Calendar hoje = Calendar.getInstance();
-				int day_week = hoje.get(Calendar.DAY_OF_WEEK);
-				List<Cardapio> cardapios = cardapioDAO.getCardapio(day_week);
-
-				if (cardapios.size() >= 2) {
-					Cardapio c1 = cardapios.get(0);
-					Cardapio c2 = cardapios.get(1);
-
-					session.setAttribute("almoco", c1);
-					session.setAttribute("jantar", c2);
-				}
+				session.setAttribute("usuario", usr);							
 
 				switch (usr.getTipoUsuario()) {
 				case "aluno":

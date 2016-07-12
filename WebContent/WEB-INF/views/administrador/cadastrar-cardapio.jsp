@@ -33,11 +33,11 @@
 					<label class="control-label col-sm-3" for="data">Dia da Semana:</label>
 					<div class="col-sm-9">
 						<select id="data" class="form-control" name="data">
-							<option value="2">Segunda-Feira</option>
-							<option value="3">Terca-Feira</option>
-							<option value="4">Quarta-Feira</option>
-							<option value="5">Quinta-Feira</option>
-							<option value="6">Sexta-Feira</option>
+							<option value="1">Segunda-Feira</option>
+							<option value="2">Terca-Feira</option>
+							<option value="3">Quarta-Feira</option>
+							<option value="4">Quinta-Feira</option>
+							<option value="5">Sexta-Feira</option>
 						</select>
 					</div>
 				</div>

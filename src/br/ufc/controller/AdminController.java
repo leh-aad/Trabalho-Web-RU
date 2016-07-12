@@ -1,9 +1,13 @@
 package br.ufc.controller;
 
+import java.util.Calendar;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.AlunoDAO;
@@ -32,7 +36,30 @@ public class AdminController {
 	private CardapioDAO cardapioDAO;
 
 	@RequestMapping("/administrador")
-	public String index() {
+	public String index(HttpSession session) {
+		Calendar hoje = Calendar.getInstance();
+		int day_week = hoje.get(Calendar.DAY_OF_WEEK);
+		List<Cardapio> cardapios = cardapioDAO.getCardapio(day_week);
+		
+		System.out.println(day_week);
+		
+		if (cardapios.size() > 0) {			
+			Cardapio c1 = cardapios.get(0);					
+			session.setAttribute("almoco", c1);
+			
+			if (cardapios.size() > 1){
+				Cardapio c2 = cardapios.get(1);
+				session.setAttribute("jantar", c2);
+			}
+			else{				
+				session.removeAttribute("jantar");
+			}
+		}
+		else{
+			session.removeAttribute("almoco");
+		}
+
+		
 		return "administrador/index";
 	}
 
@@ -52,7 +79,7 @@ public class AdminController {
 	}
 
 	@RequestMapping("/cadastrar-aluno")
-	public String cadastrarAluno(Aluno aluno, Model model) {
+	public String cadastrarAluno(Aluno aluno, HttpSession session) {
 
 		if (aluno != null) {
 
@@ -63,19 +90,19 @@ public class AdminController {
 
 			if (usuarioDAO.inserir(usuario)) {
 				alunoDAO.inserir(aluno);
-				model.addAttribute("feedback-cadastro",
+				session.setAttribute("feedback-cadastro",
 						"Aluno cadastrado com sucesso!");
 				return "redirect:cadastrar-aluno-form";
 			}
 		}
 
-		model.addAttribute("feedback-cadastro",
+		session.setAttribute("feedback-cadastro",
 				"Aluno nao pode ser cadastrado!");
 		return "redirect:cadastrar-aluno-form";
 	}
 
 	@RequestMapping("/cadastrar-secretario")
-	public String cadastrarSecretario(Secretario secretario, Model model) {
+	public String cadastrarSecretario(Secretario secretario, HttpSession session) {
 
 		if (secretario != null) {
 
@@ -86,26 +113,32 @@ public class AdminController {
 
 			if (usuarioDAO.inserir(usuario)) {
 				secretarioDAO.inserir(secretario);
-				model.addAttribute("feedback_cadastro",
+				session.setAttribute("feedback_cadastro",
 						"Secretario cadastrado com sucesso!");
 				return "redirect:cadastrar-secretario-form";
 			}
 		}
 
-		model.addAttribute("feedback_cadastro",
+		session.setAttribute("feedback_cadastro",
 				"Secretario nao pode ser cadastrado!");
 		return "redirect:cadastrar-secretario-form";
 	}
 
 	@RequestMapping("/cadastrar-cardapio")
-	public String cadastrarCardapio(Cardapio cardapio, Model model) {
+	public String cadastrarCardapio(Cardapio cardapio, HttpSession session) {		
+		List<Cardapio> cardapios = cardapioDAO.getCardapio(cardapio.getData());
 		
+		for (Cardapio c : cardapios){			
+			if (c.getTipo() == cardapio.getTipo())
+				cardapioDAO.remover(cardapios.get(0).getId());																
+		}
+				
 		if (cardapio != null && cardapioDAO.inserir(cardapio))
-			model.addAttribute("feedback_cadastro", "Cardapio cadastrado com sucesso!");
+			session.setAttribute("feedback_cadastro", "Cardapio cadastrado com sucesso!");
 		else
-			model.addAttribute("feedback_cadastro", "Cardapio nao pode ser cadastrado!");
+			session.setAttribute("feedback_cadastro", "Cardapio nao pode ser cadastrado!");
 		
+					
 		return "redirect:cadastrar-cardapio-form";
 	}
-
 }

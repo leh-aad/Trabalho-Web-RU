@@ -10,7 +10,7 @@ public class Cardapio {
 
 	@Id
 	@GeneratedValue
-	private int id;
+	private Long id;
 
 	//0 = almoco, 1 = jantar
 	@Column(name = "tipo")
@@ -113,4 +113,13 @@ public class Cardapio {
 		this.fruta = fruta;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 }
