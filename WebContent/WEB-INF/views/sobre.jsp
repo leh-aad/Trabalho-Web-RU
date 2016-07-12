@@ -24,5 +24,8 @@
     <h4 class="col-md-offset-3">Um sistema para venda e utilizacao dos tickets usados no RU.</h4>
     <h4 class="col-md-offset-3">Tem o intuito de diminuir o despedicio de papel.</h4>
   </div>
+
+  <jsp:include page="rodape.jsp"></jsp:include>
+
 </body>
 </html>

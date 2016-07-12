@@ -30,5 +30,8 @@
     <jsp:include page="login.jsp"></jsp:include>
 
   </div>
+
+  <jsp:include page="rodape.jsp"></jsp:include>
+  
 </body>
 </html>

@@ -7,7 +7,7 @@
 	<title>Novo Aluno</title>
 	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
-	<script type="text/javascript" src="../resources/js/cadastro.js"></script>
+	<script type="text/javascript" src="../resources/js/cardapio.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
@@ -122,5 +122,8 @@
 		</div>
 
 	</div>
+
+	<jsp:include page="../rodape.jsp"></jsp:include>
+
 </body>
 </html>

@@ -7,11 +7,6 @@ var mensagens_erro = {
 
 var formulario;
 
-window.onload = function(){
-	formulario = document.getElementById("form-cadastro-usuario");
-	formulario.addEventListener("submit", validarFormulario, false);
-}
-
 function validarFormulario(event){
 	limparMensagens();
 
@@ -28,7 +23,7 @@ function validarFormulario(event){
 		}
 	}
 
-	var nome = document.getElementById("nome");
+	var nome = document.getElementById("nome").value;
 	if (!isNaN(nome)){
 		exibeMensagens("nome", mensagens_erro["nome"]);
 		valido = false;
@@ -40,15 +35,14 @@ function validarFormulario(event){
 		valido = false;
 	}
 
-	var email = document.getElementById("email");
+	var email = document.getElementById("email").value;
 	if(email.indexOf("@") == -1 || email.indexOf(".") == -1){
-        exibeMensagens("email", messages["email"]);
+        exibeMensagens("email", mensagens_erro["email"]);
         valido = false;
     }
 
 	if (!valido){
 		event.preventDefault();
-		return false;
 	}
 
 	return true;
@@ -67,4 +61,9 @@ function exibeMensagens(id, mensagem) {
 
 function isVazio(campo) {
   return campo.length == 0;
+}
+
+window.onload = function(){
+	formulario = document.getElementById("form-cadastro-usuario");
+	formulario.addEventListener("submit", validarFormulario, false);
 }

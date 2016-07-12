@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Novo Aluno</title>
-	<link rel="stylesheet" type="text/css" href="../../../resources/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
 	<script type="text/javascript" src="../resources/js/cadastro.js"></script>
 </head>
@@ -16,7 +16,7 @@
 			<span class="navbar-brand">Tickets RU</span>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="../administrador">Home</a></li>
+			<li><a href="../administrador">Principal</a></li>
 			<li><a href="../cadastrar/aluno">Cadastar Aluno</a></li>
 			<li class="active"><a href="#">Cadastar Secretario</a></li>
 			<li><a href="../cadastrar/cardapio">Cadastrar Cardapio</a></li>
@@ -59,5 +59,8 @@
 		</c:if>
 
 	</div>
+
+	<jsp:include page="../rodape.jsp"></jsp:include>
+
 </body>
 </html>

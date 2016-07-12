@@ -4,8 +4,8 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-  <link type="text/css" rel="stylesheet" href="Trabalho_Web_-_RU/resources/css/bootstrap.css"/>
-  <link type="text/css" rel="stylesheet" href="Trabalho_Web_-_RU/resources/css/main.css"/>
+  <link type="text/css" rel="stylesheet" href="../resources/css/bootstrap.css"/>
+  <link type="text/css" rel="stylesheet" href="../resources/css/main.css"/>
 
   <title>Tickets RU - UFC</title>
 </head>
@@ -15,10 +15,10 @@
       <span class="navbar-brand">Tickets RU</span>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="#">Principal</a></li>
-      <li class="active"><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
-      <li><a href="ticket/vender">Vender Ticket</a></li>
-      <li><a href="logout">Sair</a></li>
+      <li><a href="../secretario">Principal</a></li>
+      <li class="active"><a href="#">Cardapio do Proximo Dia</a></li>
+      <li><a href="../ticket/vender">Vender Ticket</a></li>
+      <li><a href="../logout">Sair</a></li>
     </ul>
   </div>
 
@@ -34,5 +34,8 @@
     </div>
 
   </div>
+
+  <jsp:include page="../rodape.jsp"></jsp:include>
+
 </body>
 </html>

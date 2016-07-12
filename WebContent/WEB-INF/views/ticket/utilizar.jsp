@@ -17,7 +17,7 @@ pageEncoding="ISO-8859-1"%>
 				<label for="login">Login:</label>
 				<input id="login"	class="form-control" type="text" name="login">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="senha">Senha:</label>
 				<input id="senha"	class="form-control" type="password" name="senha">
@@ -26,12 +26,15 @@ pageEncoding="ISO-8859-1"%>
 		</form>
 
 		<c:if test="${ not empty feedback_login }">
-		<div class="erro">
-			<hr>
-			<span>${ feedback_login }</span>
-		</div>
-	</c:if>
+			<div class="erro">
+				<hr>
+				<span>${ feedback_login }</span>
+			</div>
+		</c:if>
 
-</div>
+	</div>
+
+	<jsp:include page="../rodape.jsp"></jsp:include>
+
 </body>
 </html>

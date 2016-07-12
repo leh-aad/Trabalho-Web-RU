@@ -39,5 +39,8 @@ pageEncoding="ISO-8859-1"%>
 		</div>
 
 	</div>
+
+	<jsp:include page="../rodape.jsp"></jsp:include>
+
 </body>
 </html>
