@@ -26,12 +26,12 @@ public class TicketController {
 	@Autowired
 	private SecretarioDAO secretarioDAO;
 	
-	@RequestMapping("/ticket/vender")
+	@RequestMapping("/vender-ticket-form")
 	public String telaVender() {
 		return "ticket/vender";
 	}
 
-	@RequestMapping("/ticket/utilizar")
+	@RequestMapping("/utilizar-ticket-form")
 	public String telaUtilizar() {
 		return "ticket/utilizar";
 	}
@@ -128,5 +128,4 @@ public class TicketController {
 
 		return "ticket/utilizar";
 	}
-
 }

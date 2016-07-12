@@ -34,22 +34,22 @@ public class AdminController {
 		return "administrador/index";
 	}
 
-	@RequestMapping("/cadastrar/aluno")
+	@RequestMapping("/cadastrar-aluno-form")
 	public String cadastrarAluno() {
 		return "administrador/cadastrar-aluno";
 	}
 
-	@RequestMapping("/cadastrar/secretario")
+	@RequestMapping("/cadastrar-secretario-form")
 	public String cadastrarSecretario() {
 		return "administrador/cadastrar-secretario";
 	}
 
-	@RequestMapping("/cadastrar/cardapio")
+	@RequestMapping("/cadastrar-cardapio-form")
 	public String cadastrarCardapio() {
 		return "administrador/cadastrar-cardapio";
 	}
 
-	@RequestMapping("cadastrar/aluno-cadastrar")
+	@RequestMapping("cadastrar-aluno")
 	public String cadastrarAluno(Aluno aluno, Model model) {
 
 		if (aluno != null) {
@@ -63,16 +63,16 @@ public class AdminController {
 				alunoDAO.inserir(aluno);
 				model.addAttribute("feedback-cadastro",
 						"Aluno cadastrado com sucesso!");
-				return "administrador/cadastrar/aluno";
+				return "redirect:cadastrar-aluno-form";
 			}
 		}
 
 		model.addAttribute("feedback-cadastro",
 				"Aluno nao pode ser cadastrado!");
-		return "administrador/cadastrar/aluno";
+		return "redirect:cadastrar-aluno-form";
 	}
 
-	@RequestMapping("cadastrar/secretario-cadastrar")
+	@RequestMapping("/cadastrar-secretario")
 	public String cadastrarSecretario(Secretario secretario, Model model) {
 
 		if (secretario != null) {
@@ -95,7 +95,7 @@ public class AdminController {
 		return "administrador/cadastrar/secretario";
 	}
 
-	@RequestMapping("cadastrar/cardapio-cadastrar")
+	@RequestMapping("cadastrar-cardapio")
 	public String cadastrarCardapio(Cardapio cardapio, Model model) {
 		
 		if (cardapio != null && cardapioDAO.inserir(cardapio))
