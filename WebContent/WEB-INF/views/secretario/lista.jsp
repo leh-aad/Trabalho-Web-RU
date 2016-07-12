@@ -15,7 +15,7 @@
     </thead>
     <c:if test="${ not empty secretarios }">
       <tbody>
-        <c:forEach var="s" items="secretarios">
+        <c:forEach var="s" items="${secretarios}">
           <tr>
             <td>${ s.matricula }</td>
             <td>${ s.nome }</td>

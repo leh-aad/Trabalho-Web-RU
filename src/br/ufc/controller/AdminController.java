@@ -37,6 +37,12 @@ public class AdminController {
 
 	@RequestMapping("/administrador")
 	public String index(HttpSession session) {
+		List<Aluno> alunos = alunoDAO.listar();
+		List<Secretario> secretarios = secretarioDAO.listar();
+		
+		session.setAttribute("alunos", alunos);
+		session.setAttribute("secretarios", secretarios);
+
 		Calendar hoje = Calendar.getInstance();
 		int day_week = hoje.get(Calendar.DAY_OF_WEEK);
 		List<Cardapio> cardapios = cardapioDAO.getCardapio(day_week);

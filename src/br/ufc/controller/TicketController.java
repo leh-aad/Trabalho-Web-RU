@@ -125,9 +125,9 @@ public class TicketController {
 		}
 
 		if (erro)
-			session.setAttribute("feedback_venda", "Usuario nao existe!");
+			session.setAttribute("feedback_login", "Usuario nao existe!");
 		else
-			session.setAttribute("feedback_venda", "Tenha uma boa refeicao!");
+			session.setAttribute("feedback_login", "Tenha uma boa refeicao!");
 
 		return "redirect:utilizar-ticket-form";
 	}
