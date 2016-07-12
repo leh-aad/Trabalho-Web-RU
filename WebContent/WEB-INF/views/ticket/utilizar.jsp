@@ -10,6 +10,17 @@ pageEncoding="ISO-8859-1"%>
 	<title>RU - Refeicao</title>
 </head>
 <body>
+
+	<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+      <span class="navbar-brand">Tickets RU</span>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li class="active"><a href="#">Principal</a></li>
+      <li><a href="logout">Sair</a></li>
+    </ul>
+  </div>
+
 	<div class="col-md-4 col-md-offset-4">
 
 		<form id="form-ticket-utilizar" action="utilizar-ticket" method="post">

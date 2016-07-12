@@ -24,13 +24,15 @@
 
   <div class="container">
 
-    <div class="col-md-2 col-md-offset-0">
-      <h4 class="text-success">Meus Creditos</h4>
-      <h5 class="text-info">${ secretario.credito }</h5>
+    <div class="col-md-9 col-md-offset-0">
+      <jsp:include page="../cardapio/cardapio.jsp"/>
     </div>
 
-    <div class="col-md-10 col-md-offset-2">
-      <jsp:include page="../cardapio/cardapio.jsp"/>
+    <div class="perfil col-md-3 col-md-offset-9">
+      <h4 class="text-danger">Seus Dados</h4>
+      <h5 class="text-success">Matricula: ${ secretario.matricula }</h5>
+      <h5 class="text-success">Nome: ${ secretario.nome }</h5>
+      <h5 class="text-success">Creditos: ${ secretario.credito }</h5>
     </div>
 
   </div>
