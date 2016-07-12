@@ -11,10 +11,22 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 
+	<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+      <span class="navbar-brand">Tickets RU</span>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="#">Principal</a></li>
+      <li><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
+      <li class="active"><a href="#">Vender Ticket</a></li>
+      <li><a href="logout">Sair</a></li>
+    </ul>
+  </div>
+
 	<div class="container">
 
 		<div class="col-md-8">
-			<form class="col-md-10" action="../vender-ticket" method="post">
+			<form class="col-md-10" action="vender-ticket" method="post">
 
 				<div class="form-group">
 				  <label for="login">Matricula:</label>
@@ -40,7 +52,7 @@ pageEncoding="ISO-8859-1"%>
 
 	</div>
 
-	<jsp:include page="../rodape.jsp"></jsp:include>
+	<jsp:include page="../rodape.jsp"/>
 
 </body>
 </html>

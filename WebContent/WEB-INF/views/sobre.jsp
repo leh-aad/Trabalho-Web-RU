@@ -25,7 +25,7 @@
     <h4 class="col-md-offset-3">Tem o intuito de diminuir o despedicio de papel.</h4>
   </div>
 
-  <jsp:include page="rodape.jsp"></jsp:include>
+  <jsp:include page="rodape.jsp"/>
 
 </body>
 </html>

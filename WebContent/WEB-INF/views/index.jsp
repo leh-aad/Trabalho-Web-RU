@@ -28,10 +28,10 @@
       <jsp:include page="cardapio/cardapio.jsp"/>
     </div>
 
-    <jsp:include page="login.jsp"></jsp:include>
+    <jsp:include page="login.jsp"/>
 
   </div>
   
-  <jsp:include page="rodape.jsp"></jsp:include>
+  <jsp:include page="rodape.jsp"/>
 </body>
 </html>

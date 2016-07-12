@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="resources/js/cadastro.js"></script>
 </head>
 <body>
+	
   <div class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
       <span class="navbar-brand">Tickets RU</span>
@@ -22,7 +23,19 @@
     </ul>
   </div>
 
-	<jsp:include page="../rodape.jsp"></jsp:include>
+	<div class="container">
+
+	  <div class="col-md-8 col-md-offset-2">
+			<jsp:include page="../aluno/lista.jsp"/>
+		</div>
+
+		<div class="col-md-8 col-md-offset-2">
+			<jsp:include page="../secretario/lista.jsp"/>
+		</div>
+
+	</div>
+
+	<jsp:include page="../rodape.jsp"/>
 
 </body>
 </html>
