@@ -66,4 +66,12 @@ public class Aluno {
 	public void setCredito(int credito) {
 		this.credito = credito;
 	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}	
 }

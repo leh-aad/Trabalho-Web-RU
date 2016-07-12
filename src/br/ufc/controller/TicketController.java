@@ -1,10 +1,12 @@
 package br.ufc.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.ufc.dao.AlunoDAO;
 import br.ufc.dao.SecretarioDAO;
@@ -37,13 +39,13 @@ public class TicketController {
 	}
 
 	@RequestMapping("/vender-ticket")
-	public String vender(String login, int quantidade, Model model) {
+	public String vender(@RequestParam(value = "login") String login, @RequestParam(value = "quantidade") int quantidade, HttpSession session) {
 
 		boolean erro = false;
 
 		if (quantidade > 5 || quantidade < 0) {
-			model.addAttribute("feedback_venda", "A quantidade tem que estar entre 1 e 5 tickets!");
-			return "ticket/vender";
+			session.setAttribute("feedback_venda", "A quantidade tem que estar entre 1 e 5 tickets!");
+			return "redirect:vender-ticket-form";
 		}
 
 		Usuario usuario = usuarioDAO.buscarUsuario(login);
@@ -55,7 +57,8 @@ public class TicketController {
 				if (aluno != null) {
 					aluno.setCredito(aluno.getCredito() + quantidade);
 					alunoDAO.alterar(aluno);
-					model.addAttribute("feedback_venda", "Venda realizada com sucesso!");
+					
+					session.setAttribute("feedback_venda", "Venda realizada com sucesso!");
 				} else
 					erro = true;
 				break;
@@ -65,23 +68,23 @@ public class TicketController {
 				if (secretario != null) {
 					secretario.setCredito(secretario.getCredito() + quantidade);
 					secretarioDAO.alterar(secretario);
-					model.addAttribute("feedback_venda", "Venda realizada com sucesso!");
+					session.setAttribute("feedback_venda", "Venda realizada com sucesso!");
 				} else
 					erro = true;
 				break;
 			}
 		} else {
-			model.addAttribute("feedback_venda", "Venda nao concretizada! Usuario nao existe!");
+			session.setAttribute("feedback_venda", "Venda nao concretizada! Usuario nao existe!");
 		}
 
 		if (erro)
-			model.addAttribute("feedback_venda", "Venda nao concretizada!");
+			session.setAttribute("feedback_venda", "Venda nao concretizada!");
 
-		return "ticket/vender";
+		return "redirect:vender-ticket-form";
 	}
 
 	@RequestMapping("/utilizar-ticket")
-	public String utilizar(String login, String senha, Model model) {
+	public String utilizar(String login, String senha, HttpSession session) {
 
 		boolean erro = false;
 
@@ -93,8 +96,8 @@ public class TicketController {
 				Aluno aluno = alunoDAO.buscarAluno(usuario.getLogin());
 				if (aluno != null) {
 					if (aluno.getCredito() == 0) {
-						model.addAttribute("feedback_login", "Usuario com credito insuficiente!");
-						return "ticket/utilizar";
+						session.setAttribute("feedback_login", "Usuario com credito insuficiente!");
+						return "redirect:utilizar-ticket-form";
 					} else {
 						aluno.setCredito(aluno.getCredito() - 1);
 						alunoDAO.alterar(aluno);
@@ -107,8 +110,8 @@ public class TicketController {
 				Secretario secretario = secretarioDAO.buscarSecretario(usuario.getLogin());
 				if (secretario != null) {
 					if (secretario.getCredito() == 0) {
-						model.addAttribute("feedback_login", "Usuario com credito insuficiente!");
-						return "ticket/utilizar";
+						session.setAttribute("feedback_login", "Usuario com credito insuficiente!");
+						return "redirect:utilizar-ticket-form";
 					} else {
 						secretario.setCredito(secretario.getCredito() - 1);
 						secretarioDAO.alterar(secretario);
@@ -118,14 +121,14 @@ public class TicketController {
 				break;
 			}
 		} else {
-			model.addAttribute("feedback_login", "Usuario nao cadastrado!");
+			session.setAttribute("feedback_login", "Usuario nao cadastrado!");
 		}
 
 		if (erro)
-			model.addAttribute("feedback_venda", "Usuario nao existe!");
+			session.setAttribute("feedback_venda", "Usuario nao existe!");
 		else
-			model.addAttribute("feedback_venda", "Tenha uma boa refeicao!");
+			session.setAttribute("feedback_venda", "Tenha uma boa refeicao!");
 
-		return "ticket/utilizar";
+		return "redirect:utilizar-ticket-form";
 	}
 }

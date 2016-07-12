@@ -19,7 +19,7 @@
       <li class="active"><a href="#">Cadastrar Aluno</a></li>
       <li><a href="cadastrar-secretario-form">Cadastrar Secretario</a></li>
       <li><a href="cadastrar-cardapio-form">Cadastrar Cardapio</a></li>
-			<li><a href="logout">Sair</a></li>
+	  <li><a href="logout">Sair</a></li>
     </ul>
   </div>
 

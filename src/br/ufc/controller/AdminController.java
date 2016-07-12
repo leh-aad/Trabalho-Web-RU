@@ -2,6 +2,7 @@ package br.ufc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,6 +16,7 @@ import br.ufc.model.Secretario;
 import br.ufc.model.Usuario;
 
 @Controller
+@Transactional
 public class AdminController {
 
 	@Autowired
@@ -49,7 +51,7 @@ public class AdminController {
 		return "administrador/cadastrar-cardapio";
 	}
 
-	@RequestMapping("cadastrar-aluno")
+	@RequestMapping("/cadastrar-aluno")
 	public String cadastrarAluno(Aluno aluno, Model model) {
 
 		if (aluno != null) {
@@ -84,18 +86,18 @@ public class AdminController {
 
 			if (usuarioDAO.inserir(usuario)) {
 				secretarioDAO.inserir(secretario);
-				model.addAttribute("feedback-cadastro",
+				model.addAttribute("feedback_cadastro",
 						"Secretario cadastrado com sucesso!");
-				return "administrador/cadastrar/secretario";
+				return "redirect:cadastrar-secretario-form";
 			}
 		}
 
-		model.addAttribute("feedback-cadastro",
+		model.addAttribute("feedback_cadastro",
 				"Secretario nao pode ser cadastrado!");
-		return "administrador/cadastrar/secretario";
+		return "redirect:cadastrar-secretario-form";
 	}
 
-	@RequestMapping("cadastrar-cardapio")
+	@RequestMapping("/cadastrar-cardapio")
 	public String cadastrarCardapio(Cardapio cardapio, Model model) {
 		
 		if (cardapio != null && cardapioDAO.inserir(cardapio))
@@ -103,7 +105,7 @@ public class AdminController {
 		else
 			model.addAttribute("feedback_cadastro", "Cardapio nao pode ser cadastrado!");
 		
-		return "administrador/cadastrar-cardapio";
+		return "redirect:cadastrar-cardapio-form";
 	}
 
 }

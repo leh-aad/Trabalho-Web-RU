@@ -61,5 +61,14 @@ public class HomeController {
 	public String about() {
 		return "sobre";
 	}
-
+	
+	@RequestMapping("/aluno")
+	public String aluno(){
+		return "aluno/index";
+	}
+	
+	@RequestMapping("/secretario")
+	public String secretario(){
+		return "secretario/index";
+	}
 }

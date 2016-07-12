@@ -18,6 +18,7 @@ public class UsuarioDAO {
 			manager.persist(usuario);
 			return true;
 		}
+		
 		return false;
 	}
 

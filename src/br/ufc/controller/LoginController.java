@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.AlunoDAO;
@@ -36,7 +35,7 @@ public class LoginController {
 	private CardapioDAO cardapioDAO;
 	
 	@RequestMapping("/login")
-	public String login(Usuario usuario, HttpSession session, Model model) {
+	public String login(Usuario usuario, HttpSession session) {
 		if (usuario != null) {
 			Usuario usr = usuarioDAO.autenticar(usuario.getLogin(), usuario.getSenha());
 
@@ -51,29 +50,30 @@ public class LoginController {
 					Cardapio c1 = cardapios.get(0);
 					Cardapio c2 = cardapios.get(1);
 
-					model.addAttribute("almoco", c1);
-					model.addAttribute("jantar", c2);
+					session.setAttribute("almoco", c1);
+					session.setAttribute("jantar", c2);
 				}
 
 				switch (usr.getTipoUsuario()) {
 				case "aluno":
 					Aluno aluno = alunoDAO.buscarAluno(usr.getLogin());
-					model.addAttribute("aluno", aluno);					
-					return "aluno/index";
+					session.setAttribute("aluno", aluno);					
+					return "redirect:aluno";
 				case "secretario":
 					Secretario secretario = secretarioDAO.buscarSecretario(usr.getLogin());
 					if (secretario.isAdministrador())
-						return "administrador/index";
+						return "redirect:administrador";
 						
-					model.addAttribute("secretario", secretario);
-					return "secretario/index";
+					session.setAttribute("secretario", secretario);
+					return "redirect:secretario";
 				case "ru":
-					return "ticket/utilizar";
+					return "redirect:utilizar-ticket-form";
 				}
 			}
 		}
-		model.addAttribute("feedback_login", "Usuario e/ou senha invalidos!");
-		return "index";
+		
+		session.setAttribute("feedback_login", "Usuario e/ou senha invalidos!");
+		return "redirect:/";
 	}
 
 	@RequestMapping("/logout")

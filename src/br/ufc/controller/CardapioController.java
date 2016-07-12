@@ -19,7 +19,7 @@ public class CardapioController {
 	@Autowired
 	private CardapioDAO cardapioDAO;
 
-	@RequestMapping("aluno-next-cardapio")
+	@RequestMapping("/aluno-next-cardapio")
 	public String nextCardapio(Model model) {
 
 		Calendar hoje = Calendar.getInstance();
@@ -39,7 +39,7 @@ public class CardapioController {
 		return "aluno/next-cardapio";
 	}
 	
-	@RequestMapping("secretario-next-cardapio")
+	@RequestMapping("/secretario-next-cardapio")
 	public String secretarioNextCardapio(Model model) {
 
 		Calendar hoje = Calendar.getInstance();

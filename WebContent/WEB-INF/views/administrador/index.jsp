@@ -15,7 +15,7 @@
       <span class="navbar-brand">Tickets RU</span>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href="#">Principal</a></li>
+      <li class="active"><a href="administrador">Principal</a></li>
       <li><a href="cadastrar-aluno-form">Cadastrar Aluno</a></li>
       <li><a href="cadastrar-secretario-form">Cadastrar Secretario</a></li>
       <li><a href="cadastrar-cardapio-form">Cadastrar Cardapio</a></li>

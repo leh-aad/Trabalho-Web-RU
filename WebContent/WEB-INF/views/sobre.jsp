@@ -7,7 +7,6 @@
   <title>Sobre - Tickets RU</title>
 </head>
 <body>
-
   <div class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
       <span class="navbar-brand">Tickets RU</span>
@@ -15,7 +14,7 @@
     <ul class="nav navbar-nav navbar-left">
       <li><a href="/Trabalho_Web_-_RU">Principal</a></li>
       <li><a href="next-cardapio">Cardapio do Proximo Dia</a></li>
-      <li class="active"><a href="about">Sobre</a></li>
+      <li class="active"><a href="about">Sobre</a></li>      
     </ul>
   </div>
 

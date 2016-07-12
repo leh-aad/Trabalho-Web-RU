@@ -5,8 +5,9 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link type="text/css" rel="stylesheet" href="../resources/css/bootstrap.css">
-	<link type="text/css" rel="stylesheet" href="../resources/css/main.css">
+	<link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="resources/css/main.css">
+	<script type="text/javascript" src="resources/js/venderTicket.js"></script>
 	<title>Vender Ticket</title>
 </head>
 <body>
@@ -16,9 +17,9 @@ pageEncoding="ISO-8859-1"%>
       <span class="navbar-brand">Tickets RU</span>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="#">Principal</a></li>
+      <li><a href="secretario">Principal</a></li>
       <li><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
-      <li class="active"><a href="#">Vender Ticket</a></li>
+      <li class="active"><a href="vender-ticket-form">Vender Ticket</a></li>
       <li><a href="logout">Sair</a></li>
     </ul>
   </div>
@@ -26,7 +27,7 @@ pageEncoding="ISO-8859-1"%>
 	<div class="container">
 
 		<div class="col-md-8">
-			<form class="col-md-10" action="vender-ticket" method="post">
+			<form id = "form-vender-ticket" class="col-md-10" action="vender-ticket" method="post">
 
 				<div class="form-group">
 				  <label for="login">Matricula:</label>
@@ -44,12 +45,16 @@ pageEncoding="ISO-8859-1"%>
 						<option value="5">5</option>
 					</select>
 				</div>
-
+				
 				<button class="btn btn-success btn-block" type="submit">Vender</button>
-
-			</form>
-		</div>
-
+				<c:if test="${ not empty feedback_venda }">
+				    <div class="erro">
+				      <hr>
+				      <span>${ feedback_venda }</span>
+				    </div>
+				 </c:if>
+			</form>			
+		</div>		
 	</div>
 
 	<jsp:include page="../rodape.jsp"/>

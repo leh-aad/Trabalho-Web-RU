@@ -15,7 +15,7 @@
       <span class="navbar-brand">Tickets RU</span>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href="#">Principal</a></li>
+      <li class="active"><a href="secretario">Principal</a></li>
       <li><a href="secretario-next-cardapio">Cardapio do Proximo Dia</a></li>
       <li><a href="vender-ticket-form">Vender Ticket</a></li>
       <li><a href="logout">Sair</a></li>
