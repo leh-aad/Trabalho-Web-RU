@@ -1,2 +1,4 @@
 /build/
 /target/
+.settings/org.eclipse.jst.j2ee.ejb.annotations.xdoclet.prefs
+*.prefs
